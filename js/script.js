@@ -49,6 +49,7 @@ function getPercChecked(){
 function resetCalculator(){
   document.getElementById('bill').value = '';
 
+  var percBtns = document.getElementsByClassName('tip-btn');
   for(var i=0; i < percBtns.length; i++){
     percBtns[i].checked = false;
   }
