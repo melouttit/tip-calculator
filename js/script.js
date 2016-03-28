@@ -1,6 +1,9 @@
 //STEP 1
 var submit = document.getElementById('submit');
+var reset = document.getElementById('reset');
+
 submit.onclick = tipCalculate;
+reset.onclick = resetCalculator;
 
 function tipCalculate(slider, bill){
   console.log("TIP CALCULATE");
@@ -24,7 +27,7 @@ function tipCalculate(slider, bill){
   } else {
     //STEP 9
     alert('Please enter numbers only');
-    resetCalc();
+    resetCalculator();
   }
 }
 
@@ -43,4 +46,13 @@ function getPercChecked(){
 }
 
 //FOR HOMEWORK
-function resetCalc(){}
+function resetCalculator(){
+  document.getElementById('bill').value = '';
+
+  for(var i=0; i < percBtns.length; i++){
+    percBtns[i].checked = false;
+  }
+
+  var tipBox = document.getElementById('tipamount');
+  tipBox.innerHTML = '$0.00';
+}
